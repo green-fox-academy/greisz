@@ -1,0 +1,8 @@
+body {
+  margin: 0; 
+}
+article {
+  margin: 1em 0px;
+  padding: 1em;
+  border: solid 1px black;
+}
