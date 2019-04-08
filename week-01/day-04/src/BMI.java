@@ -14,7 +14,7 @@ public class BMI {
     System.out.println("Enter your height (in cm):");
     heightInCm = scan.nextDouble();
     
-    bmiRounded = Math.round((massInKg / ( Math.pow(heightInCm / 100, 2))) * 100.) / 100.;
+    bmiRounded = Math.round ((massInKg / ( Math.pow(heightInCm / 100, 2))) * 100.) / 100.;
     bmiDouble = massInKg / ( Math.pow(heightInCm / 100, 2));
     
     System.out.println("Your BMI is: " + bmiDouble + "    //unformatted");
