@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class Unique {
   
   public static int[] uniqueElements(int[] inputArray) {
-   
+    
     int uniqueElementsCounter = 1;
     Arrays.sort(inputArray);
     
@@ -28,7 +28,7 @@ public class Unique {
     }
     return uniqueArray;
   }
-    
+  
   public static void main(String[] args) {
     int[] uniqueThis = {1, 11, 34, 11, 52, 61, 1, 34};
     System.out.println(Arrays.toString(uniqueElements(uniqueThis)));
