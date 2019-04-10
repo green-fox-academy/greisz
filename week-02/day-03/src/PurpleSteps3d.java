@@ -5,17 +5,20 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class PurpleSteps {
+public class PurpleSteps3d {
   public static void mainDraw(Graphics graphics) {
     // Reproduce this:
-    // [https://github.com/green-fox-academy/teaching-materials/blob/master/workshop/drawing/purple-steps/r3.png]
+    // [https://github.com/green-fox-academy/teaching-materials/blob/master/workshop/drawing/purple-steps-3d/r4.png]
     int position = 10;
-    int numberOfSquares = 19;
+    int numberOfSquares = 6;
     int sizeOfSquares = 10;
-    
+    double sizeMultiplyer = 1.5;
+  
     for (int i = 0; i < numberOfSquares; i++) {
       purpleSquares(position, sizeOfSquares, graphics);
       position = position + sizeOfSquares;
+      double newsize = sizeOfSquares * sizeMultiplyer;
+      sizeOfSquares = (int) newsize;
     }
   }
   
