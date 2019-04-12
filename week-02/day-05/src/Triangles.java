@@ -4,7 +4,7 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class EnvelopeStar {
+public class Triangles {
   
   static final int WIDTH = 640;
   static final int HEIGHT = 640;
@@ -21,23 +21,14 @@ public class EnvelopeStar {
   }
   
   public static void mainDraw(Graphics graphics) {
+    double root3 = Math.sqrt(3);
+    int size = 300;
+    int raster = size / 6;
     
-    graphics.setColor(Color.green);
-    
-    for (int i = 0; i < 16; i++) {
-      graphics.drawLine(20 * i, 320, 320, 340 + 20 * i);
-    }
-    
-    for (int i = 0; i < 16; i++) {
-      graphics.drawLine(320, 20 * i, 320 + 20 * i, 320);
-    }
-    
-    for (int i = 0; i < 16; i++) {
-      graphics.drawLine(20 * i, 320, 320, 300 - 20 * i);
-    }
-
-    for (int i = 0; i < 16; i++) {
-      graphics.drawLine(320, 640 - 20 * i, 320 + 20 * i, 320);
+    for (int i = 0; i < size / 2 + 1; i += raster) {
+      graphics.drawLine(i, (int) (HEIGHT - i * root3), size - i, (int) (HEIGHT - i * root3));
+      graphics.drawLine(i, (int) (HEIGHT - i * root3), 2 * i, HEIGHT);
+      graphics.drawLine(2 * i, HEIGHT, size / 2 + i, (int) ((HEIGHT - (size / 2) * root3) + root3 * i));
     }
   }
   

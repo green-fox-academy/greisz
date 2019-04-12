@@ -4,7 +4,7 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class EnvelopeStar {
+public class EnvelopeStarV2 {
   
   static final int WIDTH = 640;
   static final int HEIGHT = 640;
@@ -22,24 +22,22 @@ public class EnvelopeStar {
   
   public static void mainDraw(Graphics graphics) {
     
+    int size = HEIGHT;
+    int raster = 20;
     graphics.setColor(Color.green);
-    
-    for (int i = 0; i < 16; i++) {
-      graphics.drawLine(20 * i, 320, 320, 340 + 20 * i);
-    }
-    
-    for (int i = 0; i < 16; i++) {
-      graphics.drawLine(320, 20 * i, 320 + 20 * i, 320);
-    }
-    
-    for (int i = 0; i < 16; i++) {
-      graphics.drawLine(20 * i, 320, 320, 300 - 20 * i);
-    }
-
-    for (int i = 0; i < 16; i++) {
-      graphics.drawLine(320, 640 - 20 * i, 320 + 20 * i, 320);
+    drawEnvelopeStar(size, raster, graphics);
+  }
+  
+  public static void drawEnvelopeStar(int size, int raster, Graphics graphics) {
+    int half = size /2;
+    for (int i = 0; i < half; i += raster) {
+      graphics.drawLine(i, half, half, half - raster - i);
+      graphics.drawLine(half, i, half + i, half);
+      graphics.drawLine(half, size - i, half + i, half);
+      graphics.drawLine(i, half, half, half + raster + i);
     }
   }
+  
   
   static class ImagePanel extends JPanel {
     @Override
