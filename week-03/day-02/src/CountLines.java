@@ -10,6 +10,9 @@ public class CountLines {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     String userPath = scanner.next();
+    lineCount(userPath);
+  }
+  public static void lineCount(String userPath){
     try {
       Path filePath = Paths.get(userPath);
       List<String> myString = Files.readAllLines(filePath);
