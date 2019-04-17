@@ -4,11 +4,13 @@ import java.util.List;
 
 public class DiceSet {
   ArrayList<Integer> dice = new ArrayList<>();
+  int counter = 0;
   
   public List<Integer> roll() {
     for (int i = 0; i < 6; i++) {
       dice.add((int) (Math.random() * 6) + 1);
     }
+    counter++;
     return dice;
   }
   
@@ -23,11 +25,17 @@ public class DiceSet {
   public void reroll() {
     for (int i = 0; i < dice.size(); i++) {
       dice.set(i, (int) (Math.random() * 6) + 1);
+      counter++;
     }
   }
   
   public void reroll(int k) {
     dice.set(k, (int) (Math.random() * 6) + 1);
+    counter++;
+  }
+  
+  public int counter() {
+    return counter;
   }
   
   public static void main(String[] args) {
@@ -38,13 +46,13 @@ public class DiceSet {
     // Your task is to roll the dice until all of the dice are 6
     
     DiceSet diceSet = new DiceSet();
-    System.out.println(diceSet.getCurrent());
-    System.out.println(diceSet.roll());
-    System.out.println(diceSet.getCurrent());
-    System.out.println(diceSet.getCurrent(5));
-    diceSet.reroll();
-    System.out.println(diceSet.getCurrent());
-    diceSet.reroll(4);
+    diceSet.roll();
+    for (int i = 0; i < 6; i++) {
+      while (diceSet.getCurrent(i) != 6) {
+        diceSet.reroll(i);
+      }
+    }
+    System.out.println("6x6 rolled in " + diceSet.counter + " rounds.");
     System.out.println(diceSet.getCurrent());
   }
 }
