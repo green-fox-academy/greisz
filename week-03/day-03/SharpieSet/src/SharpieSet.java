@@ -24,7 +24,7 @@ public class SharpieSet {
   
   public void removeTrash() {
     for (int i = 0; i < pencilbox.size(); i++) {
-      if (pencilbox.get(i).inkAmount == 0) {
+      if (pencilbox.get(i).inkAmount <= 0) {
         pencilbox.remove(i);
       }
     }

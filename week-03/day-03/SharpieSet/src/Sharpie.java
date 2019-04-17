@@ -14,7 +14,11 @@ public class Sharpie {
   }
   
   public void use() {
-    this.inkAmount--;
+    if (this.inkAmount > 0) {
+      this.inkAmount--;
+    } else {
+      System.out.println("This sharpie is empty!");
+    }
   }
   
 }

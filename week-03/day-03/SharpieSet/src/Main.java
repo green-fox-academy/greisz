@@ -11,9 +11,9 @@ public class Main {
     set1.add(sharpie1);
     set1.add(sharpie2);
     System.out.println("Usable sharpies in set1: " + set1.countUsable());
-  
+    
     System.out.println("Let's use sharpie1 until it works.");
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < 14; i++) {
       sharpie1.use();
       System.out.println("Sharpie1 ink amount: " + sharpie1.getInkAmount());
     }
@@ -23,7 +23,7 @@ public class Main {
     
     set1.removeTrash();
     System.out.println("Empty sharpies removed.");
-  
+    
     System.out.println("Usable sharpies in set1: " + set1.countUsable());
     System.out.println("All sharpies in set1: " + set1.getPencilbox().size());
     
