@@ -42,17 +42,18 @@ public class Pirate {
     } else {
       System.out.println("He's dead.");
     }
-    
   }
   
   public void howsItGoingMate() {
     if (this.ableToDo()) {
+      System.out.print(this.name + ": ");
       if (this.drunkLevel < 5) {
-//        System.out.println("Pour me anudder!");
+        System.out.println("Pour me anudder!");
         this.drinkSomeRum();
       } else {
-//        System.out.println("Arghh, I'ma Pirate. How d'ya d'ink its goin?");
+        System.out.println("Arghh, I'ma Pirate. How d'ya d'ink its goin?");
         this.sleep();
+        System.out.println("<" + this.name + " falls asleep.>");
       }
     } else {
       System.out.println("He's dead.");
@@ -100,6 +101,4 @@ public class Pirate {
       System.out.println("You can not fight!");
     }
   }
-  
-  
 }

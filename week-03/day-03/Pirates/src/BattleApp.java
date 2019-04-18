@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class BattleApp {
   public static void main(String[] args) {
     Ship ship1 = new Ship("Ship 1");
@@ -14,7 +12,5 @@ public class BattleApp {
     
     ship1.getInfo();
     ship2.getInfo();
-    
-    
   }
 }

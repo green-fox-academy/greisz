@@ -3,11 +3,13 @@ import java.util.List;
 
 public class Ship {
   private String name;
-  private List<Pirate> crew = new ArrayList<>();
-  private Pirate captain = new Pirate();
+  private List<Pirate> crew;
+  private Pirate captain;
   
   public Ship(String name) {
     this.name = name;
+    this.crew = new ArrayList<>();
+    this.captain = new Pirate();
   }
   
   public void fillShip(String captainsName) {
@@ -21,8 +23,7 @@ public class Ship {
     System.out.println("Ship name: " + this.name);
     this.captainInfo();
     this.crewinfo();
-    System.out.println("Score: " + this.score());
-    System.out.println();
+    System.out.println("Score: " + this.score() + "\n");
   }
   
   public void captainInfo() {
@@ -70,31 +71,24 @@ public class Ship {
   
   public boolean battle(Ship otherShip) {
     if (this.score() > otherShip.score()) {
-      System.out.println();
-      System.out.println(this.name + " wins");
-      System.out.println();
+      System.out.println(this.name + " wins" + "\n");
       this.winBattle();
       otherShip.loseBattle();
       return true;
     } else {
-      System.out.println();
-      System.out.println(otherShip.name + " wins");
-      System.out.println();
+      System.out.println(otherShip.name + " wins" + "\n");
       this.loseBattle();
       otherShip.winBattle();
       return false;
     }
   }
   
-  
   private void winBattle() {
-    int bootlesOfRum = (int) (Math.random() * 15 + 1);
-    for (int i = 0; i < bootlesOfRum; i++) {
+    int bottlesOfRum = (int) (Math.random() * 15 + 1);
+    for (int i = 0; i < bottlesOfRum; i++) {
       this.captain.howsItGoingMate();
-//      for (int j = 0; j < this.aliveCrew(); j++) {
-//        this.crew.get(j).howsItGoingMate();
-//      }
     }
+    System.out.println();
   }
   
   private void loseBattle() {
@@ -103,5 +97,4 @@ public class Ship {
       this.crew.get(i).die();
     }
   }
-  
 }
