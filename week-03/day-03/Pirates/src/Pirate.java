@@ -81,7 +81,7 @@ public class Pirate {
   }
   
   public boolean ableToDo() {
-    return  (this.isAlive && !this.passedOut);
+    return (this.isAlive && !this.passedOut);
   }
   
   public void brawl(Pirate otherPirate) {
