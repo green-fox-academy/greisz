@@ -20,16 +20,21 @@ public class Ship {
   }
   
   public void getInfo() {
-    System.out.println("Ship name: " + this.name);
+    System.out.println("     _~       " + "Ship name: " + this.name);
+    System.out.println("  _~ )_)_~    ");
+    System.out.print("  )_))_))_)   ");
     this.captainInfo();
+    System.out.print("  _!__!__!_   ");
     this.crewinfo();
+    System.out.println("  \\______t/  ");
+    System.out.print("~~~~~~~~~~~~~ ");
     System.out.println("Score: " + this.score() + "\n");
   }
   
   public void captainInfo() {
     if (this.captain != null) {
-      System.out.println("Captain's name: " + this.captain.getName());
-      System.out.println("The captain has drunk " + this.captain.getDrunkLevel() + " bottles of rum.");
+      System.out.print("Captain's name: " + this.captain.getName() + ". ");
+      System.out.println("He has drunk " + this.captain.getDrunkLevel() + " bottles of rum.");
     } else {
       System.out.println(this.name + " has no captain, hire somebody!");
     }
