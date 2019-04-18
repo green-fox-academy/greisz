@@ -1,8 +1,9 @@
 public class Pirate {
-  int drunkLevel;
-  boolean isAlive;
-  boolean passedOut;
-  boolean hasParrot;
+  private String name;
+  private int drunkLevel;
+  private boolean isAlive;
+  private boolean passedOut;
+  private boolean hasParrot;
   
   public Pirate() {
     this.drunkLevel = 0;
@@ -11,11 +12,28 @@ public class Pirate {
     this.hasParrot = false;
   }
   
-  public Pirate(boolean hasParrot) {
+  public Pirate(String name, boolean hasParrot) {
+    this.name = name;
     this.drunkLevel = 0;
     this.passedOut = false;
     this.isAlive = true;
     this.hasParrot = hasParrot;
+  }
+  
+  public String getName() {
+    return name;
+  }
+  
+  public int getDrunkLevel() {
+    return drunkLevel;
+  }
+  
+  public boolean isAlive() {
+    return isAlive;
+  }
+  
+  public boolean isPassedOut() {
+    return passedOut;
   }
   
   private void drinkSomeRum() {
@@ -24,7 +42,7 @@ public class Pirate {
         drunkLevel++;
       } else {
         this.passedOut = true;
-        this.drunkLevel =0;
+        this.drunkLevel = 0;
       }
     } else {
       System.out.println("He's dead.");
