@@ -48,10 +48,10 @@ public class Pirate {
   public void howsItGoingMate() {
     if (this.ableToDo()) {
       if (this.drunkLevel < 5) {
-        System.out.println("Pour me anudder!");
+//        System.out.println("Pour me anudder!");
         this.drinkSomeRum();
       } else {
-        System.out.println("Arghh, I'ma Pirate. How d'ya d'ink its goin?");
+//        System.out.println("Arghh, I'ma Pirate. How d'ya d'ink its goin?");
         this.sleep();
       }
     } else {
