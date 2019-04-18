@@ -37,27 +37,67 @@ public class Pirate {
   }
   
   private void drinkSomeRum() {
-    if (this.isAlive == true) {
-      if (this.drunkLevel < 4) {
-        drunkLevel++;
+    if (this.isAlive) {
+      drunkLevel++;
+    } else {
+      System.out.println("He's dead.");
+    }
+    
+  }
+  
+  public void howsItGoingMate() {
+    if (this.ableToDo()) {
+      if (this.drunkLevel < 5) {
+        System.out.println("Pour me anudder!");
+        this.drinkSomeRum();
       } else {
-        this.passedOut = true;
-        this.drunkLevel = 0;
+        System.out.println("Arghh, I'ma Pirate. How d'ya d'ink its goin?");
+        this.sleep();
       }
     } else {
       System.out.println("He's dead.");
     }
   }
   
-  public void howsItGoingMate() {
-    if (this.isAlive == true) {
-      if (this.drunkLevel < 5) {
-        System.out.println("Pour me anudder!");
-      } else {
-        System.out.println("Arghh, I'ma Pirate. How d'ya d'ink its goin?");
-      }
+  public void sleep() {
+    if (this.isAlive) {
+      this.passedOut = false;
+      this.drunkLevel = 0;
     } else {
       System.out.println("He's dead.");
+    }
+  }
+  
+  public void die() {
+    this.isAlive = false;
+  }
+  
+  public void passOut() {
+    if (this.isAlive) {
+      this.passedOut = true;
+    } else {
+      System.out.println("He's dead.");
+    }
+  }
+  
+  public boolean ableToDo() {
+    return  (this.isAlive && !this.passedOut);
+  }
+  
+  public void brawl(Pirate otherPirate) {
+    if (this.ableToDo() && otherPirate.ableToDo()) {
+      int outcome = (int) (Math.random() * 3 + 1);
+      switch (outcome) {
+        case 1:
+          this.die();
+        case 2:
+          otherPirate.die();
+        case 3:
+          this.passOut();
+          otherPirate.passOut();
+      }
+    } else {
+      System.out.println("You can not fight!");
     }
   }
   
