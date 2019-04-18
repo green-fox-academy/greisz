@@ -4,6 +4,19 @@ public class Pirate {
   boolean passedOut;
   boolean hasParrot;
   
+  public Pirate() {
+    this.drunkLevel = 0;
+    this.passedOut = false;
+    this.isAlive = true;
+    this.hasParrot = false;
+  }
+  
+  public Pirate(boolean hasParrot) {
+    this.drunkLevel = 0;
+    this.passedOut = false;
+    this.isAlive = true;
+    this.hasParrot = hasParrot;
+  }
   
   private void drinkSomeRum() {
     if (this.isAlive == true) {
