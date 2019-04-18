@@ -10,29 +10,33 @@ public class Ship {
     this.name = name;
   }
   
-  public void getInfo(Ship ship) {
-    
-    System.out.println("Ship name: " + ship.name);
-    
-    if (ship.captain != null) {
-      System.out.println("Captain's name: " + ship.captain.getName());
-      System.out.println("The captain has drunk " + ship.captain.getDrunkLevel() + " bottles ot rum.");
+  public void getInfo() {
+    System.out.println("Ship name: " + this.name);
+    this.captainInfo();
+    this.crewInfo();
+  }
+  
+  public void captainInfo() {
+    if (this.captain != null) {
+      System.out.println("Captain's name: " + this.captain.getName());
+      System.out.println("The captain has drunk " + this.captain.getDrunkLevel() + " bottles ot rum.");
     } else {
-      System.out.println(ship + " has no captain, hire somebody!");
+      System.out.println(this + " has no captain, hire somebody!");
     }
-    
-    if (ship.crew != null) {
+  }
+  
+  public void crewInfo() {
+    if (this.crew != null) {
       int crewAlive = 0;
-      for (int i = 0; i < ship.crew.size(); i++) {
-        if (ship.crew.get(i).isAlive() == true) {
+      for (int i = 0; i < this.crew.size(); i++) {
+        if (this.crew.get(i).isAlive() == true) {
           crewAlive++;
         }
       }
       System.out.println("Number of alive crew members: " + crewAlive);
     } else {
-      System.out.println(ship + " has no crew, hire some pirates!");
+      System.out.println(this + " has no crew, hire some pirates!");
     }
-    
   }
   
   public void fillShip(String captainsName) {
