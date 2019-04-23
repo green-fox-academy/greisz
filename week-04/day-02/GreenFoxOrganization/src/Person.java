@@ -20,6 +20,8 @@ public class Person {
   }
   
   public void introduce() {
-    System.out.println("Hi, I'm name, a " + this.age + " year old " + this.gender + ".");
+    System.out.println("Hi, I'm " + name +
+            ", a " + this.age + " year old " +
+            this.gender + ".");
   }
 }
