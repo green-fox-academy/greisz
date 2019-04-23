@@ -33,7 +33,7 @@ public class Garden {
   
   public void gardenWaterInfo() {
     for (int i = 0; i < this.plants.size(); i++) {
-      this.plants.get(i).waterinfo();
+      this.plants.get(i).waterInfo();
     }
     System.out.println();
   }

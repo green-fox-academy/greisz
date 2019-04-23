@@ -41,7 +41,7 @@ public class Plant {
     this.drought = drought;
   }
   
-  public void waterinfo() {
+  public void waterInfo() {
     if (this.isNeedsWater()) {
       System.out.println("The " + this.getColor() + " Plant needs water.");
     } else {
