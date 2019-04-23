@@ -35,11 +35,14 @@ public class Aircraft {
     return this.getCurrentAmmo() * this.getBaseDamage();
   }
   
-  public void refill(int load) {
+  public int refill(int load) {
+    int ammoUsed = this.getMaxAmmo() - this.getCurrentAmmo();
     if (this.getCurrentAmmo() + load > this.getMaxAmmo()) {
       this.setCurrentAmmo(this.getMaxAmmo());
+      return ammoUsed;
     } else {
       this.setCurrentAmmo(this.getCurrentAmmo() + load);
+      return ammoUsed;
     }
   }
   
