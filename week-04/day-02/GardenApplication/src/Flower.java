@@ -1,5 +1,8 @@
 public class Flower extends Plant {
-  public void watering (double waterAmount) {
-    this.setWaterLevel(this.getWaterLevel() + waterAmount * 0.75) ;
+  
+  public Flower(double waterLevel) {
+    super(waterLevel);
+    this.setNeedsWater(this.getWaterLevel() < 5);
+    this.setWaterUtilization(0.75);
   }
 }
