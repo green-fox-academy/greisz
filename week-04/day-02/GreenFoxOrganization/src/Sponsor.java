@@ -25,10 +25,10 @@ public class Sponsor extends Person {
   
   @Override
   public void introduce() {
-    System.out.println("Hi, I'm " + name +
-            ", a " + age + " year old " +
-            gender +
-            " who represents " + company +
-            " and hired " + hiredStudents + " students so far.");
+    System.out.println("Hi, I'm " + this.name +
+            ", a " + this.age + " year old " +
+            this.gender +
+            " who represents " + this.company +
+            " and hired " + this.hiredStudents + " students so far.");
   }
 }
