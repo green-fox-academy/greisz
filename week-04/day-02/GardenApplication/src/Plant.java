@@ -2,7 +2,8 @@ public class Plant {
   private double waterLevel;
   private boolean needsWater;
   private double waterUtilization;
-  String color;
+  private double drought;
+  private String color;
   
   public Plant() {
   }
@@ -20,6 +21,10 @@ public class Plant {
     this.waterLevel = waterLevel;
   }
   
+  public String getColor() {
+    return color;
+  }
+  
   public boolean isNeedsWater() {
     return needsWater;
   }
@@ -28,8 +33,20 @@ public class Plant {
     this.needsWater = needsWater;
   }
   
-  public double getWaterUtilization() {
-    return waterUtilization;
+  public double getDrought() {
+    return drought;
+  }
+  
+  public void setDrought(double drought) {
+    this.drought = drought;
+  }
+  
+  public void waterinfo() {
+    if (this.isNeedsWater()) {
+      System.out.println("The " + this.getColor() + " Plant needs water.");
+    } else {
+      System.out.println("The " + this.getColor() + " Plant doesn't need water.");
+    }
   }
   
   public void setWaterUtilization(double waterUtilization) {
@@ -38,6 +55,11 @@ public class Plant {
   
   public void watering(double waterAmount) {
     this.setWaterLevel(this.getWaterLevel() + waterAmount * waterUtilization);
+    if (this.getWaterLevel() < this.getDrought()) {
+      this.setNeedsWater(true);
+    } else {
+      this.setNeedsWater(false);
+    }
   }
   
 }
