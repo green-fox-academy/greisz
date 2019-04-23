@@ -2,11 +2,13 @@ public class Plant {
   private double waterLevel;
   private boolean needsWater;
   private double waterUtilization;
+  String color;
   
   public Plant() {
   }
   
-  public Plant(double waterLevel) {
+  public Plant(String color, double waterLevel) {
+    this.color = color;
     this.waterLevel = waterLevel;
   }
   
