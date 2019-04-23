@@ -7,7 +7,7 @@ public class Flower extends Plant {
   }
   
   @Override
-  public void waterInfo() {
+  public void waterinfo() {
     if (this.isNeedsWater()) {
       System.out.println("The " + this.getColor() + " Flower needs water.");
     } else {
