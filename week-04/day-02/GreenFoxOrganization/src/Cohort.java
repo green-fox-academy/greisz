@@ -2,9 +2,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cohort {
-  String name;
-  List<Student> studentList;
-  List<Mentor> mentorList;
+  private String name;
+  private List<Student> studentList;
+  private List<Mentor> mentorList;
   
   public Cohort(String name) {
     this.name = name;

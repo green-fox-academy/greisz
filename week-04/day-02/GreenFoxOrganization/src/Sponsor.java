@@ -1,6 +1,6 @@
 public class Sponsor extends Person {
-  String company;
-  int hiredStudents;
+  private String company;
+  private int hiredStudents;
   
   public Sponsor(String name, int age, String gender, String company) {
     super(name, age, gender);
@@ -25,9 +25,9 @@ public class Sponsor extends Person {
   
   @Override
   public void introduce() {
-    System.out.println("Hi, I'm " + this.name +
-            ", a " + this.age + " year old " +
-            this.gender +
+    System.out.println("Hi, I'm " + this.getName() +
+            ", a " + this.getAge() + " year old " +
+            this.getGender() +
             ", who represents " + this.company +
             " and hired " + this.hiredStudents + " students so far.");
   }
