@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 
 public class Carrier {
@@ -14,6 +16,39 @@ public class Carrier {
   
   public void add(Aircraft aircraft) {
     this.fleet.add(aircraft);
+  }
+  
+  private int priorityAmmoNeed() {
+    int priorityAmmo = 0;
+    for (int i = 0; i < this.fleet.size(); i++) {
+      if (this.fleet.get(i).isPriority()) {
+        priorityAmmo += this.fleet.get(i).getMaxAmmo() - this.fleet.get(i).getCurrentAmmo();
+      }
+    }
+    return priorityAmmo;
+  }
+  
+  public void fill() {
+
+    int priorityAmmo;
+    int nonPriorityAmmo;
+    
+    if (this.ammo > this.priorityAmmoNeed()){
+      priorityAmmo = this.priorityAmmoNeed();
+      nonPriorityAmmo = this.ammo - priorityAmmo;
+    } else {
+      priorityAmmo = this.ammo;
+      nonPriorityAmmo =0;
+    }
+    
+    for (int i = 0; i < this.fleet.size(); i++) {
+      if (this.fleet.get(i).isPriority()) {
+        priorityAmmo -= this.fleet.get(i).refill(priorityAmmo);
+        
+      } else {
+        nonPriorityAmmo -= this.fleet.get(i).refill(nonPriorityAmmo);
+      }
+    }
   }
   
   private int totalDamage() {

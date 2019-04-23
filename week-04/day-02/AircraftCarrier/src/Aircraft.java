@@ -58,6 +58,6 @@ public class Aircraft {
   }
   
   public boolean isPriority() {
-    return this.getType() == "F35";
+    return this.getType().equals("F35");
   }
 }
