@@ -7,6 +7,10 @@ public class Violin extends StringedInstrument {
     this.setNumberOfStrings(4);
   }
   
+  public Violin(int strings) {
+    this.setNumberOfStrings(strings);
+  }
+  
   @Override
   public void sound() {
     System.out.println(makeSound);

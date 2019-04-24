@@ -7,6 +7,10 @@ public class ElectricGuitar extends StringedInstrument {
     this.setNumberOfStrings(6);
   }
   
+  public ElectricGuitar(int strings) {
+    this.setNumberOfStrings(strings);
+  }
+  
   @Override
   public void sound() {
     System.out.println(makeSound);
