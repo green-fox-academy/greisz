@@ -1,3 +1,5 @@
+package main.java.animals;
+
 public class Mammal extends Animal {
   @Override
   public void breed() {
