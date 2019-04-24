@@ -5,6 +5,7 @@ public class Violin extends StringedInstrument {
   
   public Violin() {
     this.setNumberOfStrings(4);
+    this.name = "Violin";
   }
   
   public Violin(int strings) {
