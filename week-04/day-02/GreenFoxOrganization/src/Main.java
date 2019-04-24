@@ -9,6 +9,8 @@ public class Main {
     Person jane = new Person();
     people.add(jane);
     Student john = new Student("John Doe", 20, "male", "BME");
+    Student johnTheCLone = john.clone();
+    johnTheCLone.introduce();
     people.add(john);
     Student student = new Student();
     people.add(student);
