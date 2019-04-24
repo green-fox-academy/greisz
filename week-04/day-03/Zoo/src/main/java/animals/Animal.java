@@ -5,9 +5,13 @@ public abstract class Animal {
   private int age;
   private String gender;
   
+  public Animal(String name) {
+    this.name = name;
+  }
+  
   public String getName() {
     return name;
   }
   
-  public abstract void breed();
+  public abstract String breed();
 }

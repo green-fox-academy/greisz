@@ -1,8 +1,12 @@
 package main.java.animals;
 
 public class Bird extends Animal {
+  public Bird(String name) {
+    super(name);
+  }
+  
   @Override
-  public void breed() {
-    System.out.println("laying eggs");
+  public String breed() {
+    return "laying eggs";
   }
 }
