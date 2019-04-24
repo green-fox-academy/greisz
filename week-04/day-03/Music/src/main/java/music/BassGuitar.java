@@ -10,6 +10,7 @@ public class BassGuitar extends StringedInstrument {
   
   public BassGuitar(int strings) {
     this.setNumberOfStrings(strings);
+    this.name = "Bass Guiar";
   }
   
   @Override

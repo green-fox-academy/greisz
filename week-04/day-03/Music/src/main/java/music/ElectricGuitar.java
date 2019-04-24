@@ -10,6 +10,7 @@ public class ElectricGuitar extends StringedInstrument {
   
   public ElectricGuitar(int strings) {
     this.setNumberOfStrings(strings);
+    this.name = "Electric Guiar";
   }
   
   @Override

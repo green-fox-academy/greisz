@@ -10,6 +10,7 @@ public class Violin extends StringedInstrument {
   
   public Violin(int strings) {
     this.setNumberOfStrings(strings);
+    this.name = "Violin";
   }
   
   @Override
