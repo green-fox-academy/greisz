@@ -48,7 +48,7 @@ class ExtensionTest {
   }
   
   @Test
-  void testMedianFour() {
+  void testMedianUnorderedFour() {
     assertEquals(5, extension.median(Arrays.asList(7,5,3,5)));
   }
   
@@ -58,7 +58,12 @@ class ExtensionTest {
   }
   
   @Test
-  void testMedianSix() {
+  void testMedianUnorderedFive() {
+    assertEquals(3, extension.median(Arrays.asList(5,2,1,3,4)));
+  }
+  
+  @Test
+  void testMedianOrderedSix() {
     assertEquals(3.5, extension.median(Arrays.asList(1,2,3,4,5,6)));
   }
   
