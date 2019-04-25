@@ -10,11 +10,19 @@ public class Extension {
   }
   
   int maxOfThree(int a, int b, int c) {
-   return Math.max(Math.max(a, b), c);
+    return Math.max(Math.max(a, b), c);
   }
   
-  int median(List<Integer> pool) {
-    return pool.get((pool.size() - 1) / 2);
+  double median(List<Integer> pool) {
+    double median;
+    if (pool.size() % 2 == 0) {
+      double medianLow = pool.get(pool.size() / 2 - 1);
+      double medianHigh = pool.get(pool.size() / 2);
+      median = (medianHigh + medianLow) / 2;
+    } else {
+      median = pool.get((pool.size() - 1) / 2);
+    }
+    return median;
   }
   
   boolean isVowel(char c) {
