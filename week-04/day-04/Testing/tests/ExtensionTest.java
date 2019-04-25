@@ -23,29 +23,37 @@ class ExtensionTest {
   }
   
   @Test
-  void testMaxOfThree_first() {
+  void testMaxOfThreeFirst() {
     assertEquals(5, extension.maxOfThree(5, 4, 3));
   }
   
   @Test
-  void testMaxOfThree_second() {
+  void testMaxOfThreeSecond() {
     assertEquals(5, extension.maxOfThree(3, 5, 4));
   }
   
   @Test
-  void testMaxOfThree_third() {
+  void testMaxOfThreeThird() {
     assertEquals(5, extension.maxOfThree(3, 4, 5));
   }
   
-  
+  @Test
+  void testMaxOfThreeTwoEqual() {
+    assertEquals(5, extension.maxOfThree(3, 5, 5));
+  }
   
   @Test
-  void testMedian_four() {
+  void testMaxOfThreeAllEqual() {
+    assertEquals(5, extension.maxOfThree(5, 5, 5));
+  }
+  
+  @Test
+  void testMedianFour() {
     assertEquals(5, extension.median(Arrays.asList(7,5,3,5)));
   }
   
   @Test
-  void testMedian_five() {
+  void testMedianFive() {
     assertEquals(3, extension.median(Arrays.asList(1,2,3,4,5)));
   }
   
