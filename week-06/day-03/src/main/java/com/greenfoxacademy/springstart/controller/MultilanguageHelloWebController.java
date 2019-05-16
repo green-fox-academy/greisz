@@ -13,9 +13,20 @@ public class MultilanguageHelloWebController {
   
   @RequestMapping("/web/greeting/multilanguage")
   public String greeting(Model model) {
-    int random =(int)(Math.random() * this.hellos.length);
-    String hello = this.hellos[random];
+    int randomLanguage = (int) (Math.random() * this.hellos.length);
+    String hello = this.hellos[randomLanguage];
+    
+    int randomRed = (int) (Math.random() * 256);
+    int randomGreen = (int) (Math.random() * 256);
+    int randomBlue = (int) (Math.random() * 256);
+    int randomsize = (int) (Math.random() * 60 + 20);
+    
     model.addAttribute("greet", hello);
+    model.addAttribute("red", randomRed);
+    model.addAttribute("green", randomGreen);
+    model.addAttribute("blue", randomBlue);
+    model.addAttribute("size", randomsize);
+  
     return "greeting_multilanguage";
   }
 }
