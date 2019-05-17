@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+  <head> 
+    <title>Login</title>
+    <link href="styles.css" type="text/css" rel="stylesheet">
+  </head>      
+
+  <body>
+    <form>
+      <p>Account login</p>
+      <label for="userName">username</label>
+      <input type="text" id= "userName" name="userName" autofocus required>
+
+      <label for="password">password</label>
+      <input type="password" id= "myPassword" name="userPassword" required>
+      <div class="eye" onmousedown="togglePasswordVisibility()" onmouseup="togglePasswordVisibility()">
+        <img src="eye.png">
+      </div>
+      
+      <script>
+        function togglePasswordVisibility() {
+          var x = document.getElementById("myPassword");
+          if (x.type === "password") {
+            x.type = "text";
+          } else {
+            x.type = "password";
+          }
+        }
+      </script>
+
+
+      <a href=about:blank target="_blank">Forgot password?</a>
+
+      <input type="submit" value="Login">
+    </form>
+  </body>    
+
+</html>
