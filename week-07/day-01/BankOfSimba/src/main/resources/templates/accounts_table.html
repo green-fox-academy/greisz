@@ -2,8 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <title>Thymeleaf Exercise #</title>
-  <link rel="stylesheet" th:href="@{/style.css}"/>
   <meta charset="utf-8"/>
+  
+  <style>
+    .king {
+      text-shadow: 0 0 3px gold;
+    }
+  </style>
 </head>
 
 <body>
@@ -13,14 +18,16 @@
   <th>Name</th>
   <th>Specie</th>
   <th>Balance</th>
+  <th>Owner is</th>
   </thead>
   
   <tbody>
-  <tr th:each="account : ${accounts}">
+  <tr th:each="account : ${accounts}" th:classappend="${account.king} ? king : notKing">
     <td th:text="${accountStat.index+1}"></td>
     <td th:text="${account.name}"></td>
     <td th:text="|(${account.animalType})|"></td>
     <td th:text="|${#numbers.formatDecimal(account.balance,0,2)} Zebra|"></td>
+    <td th:text="${account.goodGuy} ? 'Good One' : 'Bad Guy'"></td>
   </tr>
   </tbody>
 </table>
