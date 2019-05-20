@@ -7,11 +7,8 @@
 </head>
 
 <body>
-
-<div th:each="account : ${accounts}">
-  <p th:text="|${account.name} (${account.animalType}): ${#numbers.formatDecimal(account.balance,0,2)} Zebra|"></p>
-</div>
-
+  <p th:text="${text}"></p>
+  <p th:utext="${text}"></p>
 </body>
 
 </html>
