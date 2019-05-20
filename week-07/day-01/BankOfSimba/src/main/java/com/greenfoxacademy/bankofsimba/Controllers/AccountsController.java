@@ -23,4 +23,14 @@ public class AccountsController {
     model.addAttribute("accounts", accountsList);
     return "accounts";
   }
+  
+  @RequestMapping(path = "/showTable", method = RequestMethod.GET)
+  public String showAccountsInTable(Model model) {
+    accountsList.add(new BankAccount("Simba", 1000, "lion"));
+    accountsList.add(new BankAccount("Timon", 800, "suricate"));
+    accountsList.add(new BankAccount("Pumbaa", 900, "warthog"));
+    
+    model.addAttribute("accounts", accountsList);
+    return "accounts_table";
+  }
 }
