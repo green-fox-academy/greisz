@@ -9,6 +9,12 @@ public class BankAccount {
   public BankAccount() {
   }
   
+  public BankAccount(String name, double balance, String animalType) {
+    this.name = name;
+    this.balance = balance;
+    this.animalType = animalType;
+  }
+  
   public String getName() {
     return name;
   }
