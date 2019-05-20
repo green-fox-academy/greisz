@@ -9,6 +9,7 @@
 <body>
 <table>
   <thead>
+  <th>ID</th>
   <th>Name</th>
   <th>Specie</th>
   <th>Balance</th>
@@ -16,6 +17,7 @@
   
   <tbody>
   <tr th:each="account : ${accounts}">
+    <td th:text="${accountStat.index+1}"></td>
     <td th:text="${account.name}"></td>
     <td th:text="|(${account.animalType})|"></td>
     <td th:text="|${#numbers.formatDecimal(account.balance,0,2)} Zebra|"></td>

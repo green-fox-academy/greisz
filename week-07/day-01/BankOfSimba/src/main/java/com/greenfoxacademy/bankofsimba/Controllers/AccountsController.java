@@ -11,11 +11,12 @@ import java.util.List;
 
 @Controller
 public class AccountsController {
-  private List<BankAccount> accountsList = new ArrayList<>();
+  private List<BankAccount> accountsList;
   
   
   @RequestMapping(path = "/show", method = RequestMethod.GET)
   public String showAccounts(Model model) {
+    accountsList = new ArrayList<>();
     accountsList.add(new BankAccount("Simba", 1000, "lion"));
     accountsList.add(new BankAccount("Timon", 800, "suricate"));
     accountsList.add(new BankAccount("Pumbaa", 900, "warthog"));
@@ -26,6 +27,7 @@ public class AccountsController {
   
   @RequestMapping(path = "/showTable", method = RequestMethod.GET)
   public String showAccountsInTable(Model model) {
+    accountsList = new ArrayList<>();
     accountsList.add(new BankAccount("Simba", 1000, "lion"));
     accountsList.add(new BankAccount("Timon", 800, "suricate"));
     accountsList.add(new BankAccount("Pumbaa", 900, "warthog"));
