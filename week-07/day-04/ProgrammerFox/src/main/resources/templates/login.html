@@ -10,11 +10,11 @@
 <h1>Welcome to Programmer Fox Club!</h1>
 <p>Please provide a name, so you can associate it to your pet!</p>
 
-<div>
+<form action="#" th:action="@{/login}" th:object="${name}" method="post">
   <label for="name">Name</label>
   <input type="text" id="name" name="name" autofocus required>
   <input type="submit" value="GO">
-</div>
+</form>
 
 </body>
 </html>
