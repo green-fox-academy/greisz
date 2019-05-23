@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <title>Login</title>
+  <title>Registration</title>
   <link rel="stylesheet" th:href="@{/style.css}"/>
   <meta charset="utf-8"/>
 </head>
 <body>
+<a href="/">Home</a>
 
 <h1>Welcome to Programmer Fox Club!</h1>
-<p>Please provide a name, so you can associate it to your pet!</p>
+<p th:text="${text}"></p>
 
-<form action="#" th:action="@{/login}" th:object="${name}" method="post">
+<form action="#" th:action="@{/registration}" th:object="${name}" method="post">
   <label for="name">Name</label>
   <input type="text" id="name" name="name" autofocus required>
   <input type="submit" value="GO">

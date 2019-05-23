@@ -17,4 +17,8 @@ public class FoxList {
   public void addFox(String name) {
     this.foxList.add(new Fox(name));
   }
+  
+  public boolean nameCheck(String name) {
+    return this.foxList.stream().noneMatch(f -> f.getName().equals(name));
+  }
 }
