@@ -10,11 +10,11 @@
 
 <form th:action="@{/login} " method="post">
   <label>
-    <select name="name">
+    <select name="index">
       <option value="">Select fox</option>
       <option th:each="Fox : ${foxList}"
               th:text="${Fox.name}"
-              th:value="'?name=' + ${Fox.name}">
+              th:value="${FoxStat.index}">
       </option>
     </select>
     <input type="submit" value="Select fox">

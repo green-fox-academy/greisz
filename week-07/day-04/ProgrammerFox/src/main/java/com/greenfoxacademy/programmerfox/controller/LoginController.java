@@ -20,9 +20,8 @@ public class LoginController {
   }
   
   @RequestMapping(path = "/login", method = RequestMethod.POST)
-  public String selectFox(String name) {
-    System.out.println(name);
-    return "redirect:/info" + name;
+  public String selectFox(int index) {
+    return "redirect:/info?name=" + foxList.getFoxList().get(index).getName();
   }
 }
 
