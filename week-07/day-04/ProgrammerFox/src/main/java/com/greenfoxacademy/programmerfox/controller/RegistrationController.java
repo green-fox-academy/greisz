@@ -24,7 +24,8 @@ public class RegistrationController {
   public String addFox(String name, Model model) {
     if (foxList.nameCheck(name)) {
       foxList.addFox(name);
-      return "redirect:/info?name=" + name;
+      int index = foxList.getFoxList().size()-1;
+      return "redirect:/info?index=" + index;
     }
     model.addAttribute("text", "Name \"" + name + "\" is taken, please give your fox an other name!");
     model.addAttribute("color", "red");

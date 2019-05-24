@@ -21,7 +21,7 @@ public class LoginController {
   
   @RequestMapping(path = "/login", method = RequestMethod.POST)
   public String selectFox(int index) {
-    return "redirect:/info?name=" + foxList.getFoxList().get(index).getName();
+    return "redirect:/info?index=" + index;
   }
 }
 

@@ -10,19 +10,21 @@
 
 <form th:action="@{/nutritionStore} " method="post">
   <label>
-    <select name="name">
+    <input type="hidden" id="name" name="name" th:value="${name}">
+    
+    <select name="food">
       <option value="">Select food</option>
       <option th:each="Food : ${foodList}"
               th:text="${Food.foodName}"
-              th:value="'?name=' + ${Food.foodName}">
+              th:value="${Food.foodName}">
       </option>
     </select>
-  
-    <select name="name">
+    
+    <select name="drink">
       <option value="">Select drink</option>
       <option th:each="Drink : ${drinkList}"
               th:text="${Drink.drinkName}"
-              th:value="'?name=' + ${Drink.drinkName}">
+              th:value="${Drink.drinkName}">
       </option>
     </select>
     

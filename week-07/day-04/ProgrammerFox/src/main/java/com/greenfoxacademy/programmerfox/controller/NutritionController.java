@@ -23,9 +23,16 @@ public class NutritionController {
   
   
   @RequestMapping(path = "/nutritionStore", method = RequestMethod.GET)
-  public String nutrition(Model model, @RequestParam(required = true) String name) {
+  public String nutrition(Model model, @RequestParam(required = true) int index) {
     model.addAttribute("foodList", foodList.getFoodList());
     model.addAttribute("drinkList", drinkList.getDrinkList());
+    model.addAttribute("fox", foxList.getFoxList().get(index));
     return "nutrition";
+  }
+  
+  @RequestMapping(path = "/nutritionStore", method = RequestMethod.POST)
+  public String feedFox(String name, String food, String drink) {
+    foxList.getFoxList();
+    return "redirect:/info" + name;
   }
 }
