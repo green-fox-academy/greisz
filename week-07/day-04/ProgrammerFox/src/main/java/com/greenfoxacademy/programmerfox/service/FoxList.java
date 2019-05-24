@@ -8,12 +8,11 @@ import java.util.List;
 
 @Service
 public class FoxList {
-  List<Fox> foxList;
+  private List<Fox> foxList;
   
   public FoxList() {
     this.foxList = new ArrayList<>();
   }
-  
   
   public List<Fox> getFoxList() {
     return foxList;
