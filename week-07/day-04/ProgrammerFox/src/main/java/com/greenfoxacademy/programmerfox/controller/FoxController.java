@@ -14,10 +14,4 @@ public class FoxController {
     model.addAttribute("name", name);
     return "foxInfo";
   }
-  
-  @RequestMapping(path = "/nutritionStore", method = RequestMethod.GET)
-  public String nutrition(Model model, @RequestParam(required = false) String name) {
-    model.addAttribute("name", name);
-    return "nutrition";
-  }
 }
