@@ -10,8 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class MainController {
   
   @RequestMapping(path = "/", method = RequestMethod.GET)
-  public String index(Model model, @RequestParam(required = false) String name) {
-    model.addAttribute("name", name);
+  public String index() {
     return "index";
   }
 }

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Login</title>
+  <link rel="stylesheet" th:href="@{/style.css}"/>
+  <meta charset="utf-8"/>
+</head>
+<body>
+<a href="/">Home</a>
+
+<form th:action="@{/login} " method="post">
+  <label>
+    <select name="?name">
+      <option value="">Select fox</option>
+      <option th:each="Fox : ${foxList}"
+              th:text="${Fox.name}"
+              th:value="${Fox.name}">
+      </option>
+    </select>
+  </label>
+  <input type="submit" value="Select fox">
+</form>
+
+</body>
+</html>

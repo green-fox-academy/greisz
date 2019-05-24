@@ -9,9 +9,9 @@
 <a href="/">Home</a>
 
 <h1>Welcome to Programmer Fox Club!</h1>
-<p th:text="${text}"></p>
+<p th:style="'color:' + ${color}" th:text="${text}"></p>
 
-<form action="#" th:action="@{/registration}" th:object="${name}" method="post">
+<form th:action="@{/registration}" method="post">
   <label for="name">Name</label>
   <input type="text" id="name" name="name" autofocus required>
   <input type="submit" value="GO">

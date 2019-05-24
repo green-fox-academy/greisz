@@ -14,6 +14,11 @@ public class FoxList {
     this.foxList = new ArrayList<>();
   }
   
+  
+  public List<Fox> getFoxList() {
+    return foxList;
+  }
+  
   public void addFox(String name) {
     this.foxList.add(new Fox(name));
   }
