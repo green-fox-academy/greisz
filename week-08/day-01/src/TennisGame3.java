@@ -11,21 +11,28 @@ public class TennisGame3 implements TennisGame {
   }
   
   public String getScore() {
+    String[] scoreNames = new String[]{"Love", "Fifteen", "Thirty", "Forty"};
     String score;
+    String lead;
     
     if (player1Points < 4 && player2Points < 4) {
-      String[] scoreNames = new String[]{"Love", "Fifteen", "Thirty", "Forty"};
       score = scoreNames[player1Points];
+      
       return (player1Points == player2Points)
               ? score + "-All"
               : score + "-" + scoreNames[player2Points];
+      
+    } else if (player1Points == player2Points) {
+      return "Deuce";
+      
     } else {
-      if (player1Points == player2Points)
-        return "Deuce";
-      score = player1Points > player2Points ? player1Name : player2Name;
-      return ((player1Points - player2Points) * (player1Points - player2Points) == 1)
-              ? "Advantage " + score
-              : "Win for " + score;
+      lead = player1Points > player2Points
+              ? player1Name
+              : player2Name;
+      
+      return (Math.abs(player1Points - player2Points) == 1)
+              ? "Advantage " + lead
+              : "Win for " + lead;
     }
   }
   
