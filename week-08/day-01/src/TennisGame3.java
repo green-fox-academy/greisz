@@ -10,6 +10,13 @@ public class TennisGame3 implements TennisGame {
     this.player2Name = player2Name;
   }
   
+  public void wonPoint(String playerName) {
+    if (playerName == "player1")
+      this.player1Points += 1;
+    else
+      this.player2Points += 1;
+  }
+  
   public String getScore() {
     String[] scoreNames = new String[]{"Love", "Fifteen", "Thirty", "Forty"};
     String score;
@@ -34,12 +41,5 @@ public class TennisGame3 implements TennisGame {
               ? "Advantage " + lead
               : "Win for " + lead;
     }
-  }
-  
-  public void wonPoint(String playerName) {
-    if (playerName == "player1")
-      this.player1Points += 1;
-    else
-      this.player2Points += 1;
   }
 }

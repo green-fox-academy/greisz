@@ -1,7 +1,7 @@
 public class TennisGame1 implements TennisGame {
   
-  private int m_score1 = 0;
-  private int m_score2 = 0;
+  private int player1Points = 0;
+  private int player2Points = 0;
   private String player1Name;
   private String player2Name;
   
@@ -12,16 +12,18 @@ public class TennisGame1 implements TennisGame {
   
   public void wonPoint(String playerName) {
     if (playerName == "player1")
-      m_score1 += 1;
+      player1Points += 1;
     else
-      m_score2 += 1;
+      player2Points += 1;
   }
   
   public String getScore() {
     String score = "";
-    int tempScore = 0;
-    if (m_score1 == m_score2) {
-      switch (m_score1) {
+    int tempScore;
+    int player1Advantage = player1Points - player2Points;
+    
+    if (player1Points == player2Points) {
+      switch (player1Points) {
         case 0:
           score = "Love-All";
           break;
@@ -37,21 +39,24 @@ public class TennisGame1 implements TennisGame {
         default:
           score = "Deuce";
           break;
-        
       }
-    } else if (m_score1 >= 4 || m_score2 >= 4) {
-      int minusResult = m_score1 - m_score2;
-      if (minusResult == 1) score = "Advantage player1";
-      else if (minusResult == -1) score = "Advantage player2";
-      else if (minusResult >= 2) score = "Win for player1";
-      else score = "Win for player2";
+      
+    } else if (player1Points >= 4 || player2Points >= 4) {
+      
+      if (player1Advantage == 1) score = "Advantage " + player1Name;
+      else if (player1Advantage == -1) score = "Advantage " + player2Name;
+      else if (player1Advantage >= 2) score = "Win for " + player1Name;
+      else score = "Win for " + player2Name;
+      
     } else {
       for (int i = 1; i < 3; i++) {
-        if (i == 1) tempScore = m_score1;
-        else {
+        if (i == 1) {
+          tempScore = player1Points;
+        } else {
           score += "-";
-          tempScore = m_score2;
+          tempScore = player2Points;
         }
+        
         switch (tempScore) {
           case 0:
             score += "Love";
