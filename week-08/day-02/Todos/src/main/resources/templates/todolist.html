@@ -5,12 +5,25 @@
   <meta charset="utf-8"/>
 </head>
 <body>
+<h1>Todos for today:</h1>
 
-<div th:unless="${todos.size()} == 0 ">
-  <h1>Todos for today:</h1>
-  <ul th:each="Todo : ${todos}">
-    <li th:text="${Todo.name}"></li>
-  </ul>
-</div>
+<tbody>
+
+<thead>
+<th>ID</th>
+<th>Title</th>
+<th>Urgent</th>
+<th>Done</th>
+</thead>
+
+<tr th:each="Todo : ${todos}">
+  <td th:text="${Todo.id}"></td>
+  <td th:text="${Todo.title}"></td>
+  <td th:text="${Todo.urgent}"></td>
+  <td th:text="${Todo.done}"></td>
+</tr>
+</tbody>
+</table>
+
 </body>
 </html>
