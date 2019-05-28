@@ -5,6 +5,7 @@ import com.greenfoxacademy.todos.service.TodoService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -22,15 +23,23 @@ public class TodoController {
     return "todolist";
   }
   
-  @GetMapping("/addTodo")
+  @GetMapping("/todo/add")
   public String renderAddTodoPage(Model model) {
     model.addAttribute("todo", new Todo());
     return "addTodo";
   }
   
-  @PostMapping("/addTodo")
+  @PostMapping("/todo/add")
   public String addTodo(Todo todo) {
     todoService.save(todo);
     return "redirect:/todo";
   }
+  
+  @GetMapping("/todo/{id}/delete")
+  public String deleteTodo(@PathVariable(value = "id") long id) {
+    todoService.delete(id);
+    return "redirect:/todo";
+  }
+  
+  
 }
