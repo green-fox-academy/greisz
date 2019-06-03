@@ -4,17 +4,33 @@
 <head>
   <title>Add todo</title>
   <meta charset="utf-8"/>
+  <link href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 
 <body>
 
+<a class="btn btn-primary col-2" href="/todo">Todo list</a>
+
 <form th:action="@{/todo/add}" th:method="post" th:object="${todo}">
   <label>Name</label><br>
   <input type="text" th:field="*{title}"><br>
+  
   <label>Is it urgent?</label><br>
   <input type="checkbox" th:field="*{urgent}"><br>
-  <button type="submit">Add</button>
+  
+  <select th:field="*{assignee}">
+    <option value="">Assign somebody</option>
+    <option th:each="Assignee : ${assignees}"
+            th:value="${Assignee.id}"
+            th:text="${Assignee.name}"></option>
+  </select>
+  
+  <div>
+    <button class="btn btn-success col-2" type="submit">Add</button>
+  </div>
 </form>
 
+<script src="/webjars/jquery/jquery.min.js"></script>
+<script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>

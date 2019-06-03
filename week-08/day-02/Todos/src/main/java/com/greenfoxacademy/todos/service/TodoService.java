@@ -18,7 +18,7 @@ public class TodoService {
   
   public List<Todo> findAll() {
     List<Todo> todoList = new ArrayList<>();
-    todoRepository.findAll().forEach(todo -> todoList.add(todo));
+    todoRepository.findAll().forEach(todoList::add);
     return todoList;
   }
   
@@ -32,5 +32,29 @@ public class TodoService {
   
   public void delete(long id) {
     todoRepository.deleteById(id);
+  }
+  
+  public void toggleUrgency(long id) {
+    Todo toggleThis = todoRepository.findById(id).orElse(null);
+    
+    if (toggleThis != null) {
+      if (toggleThis.isUrgent()) {
+        toggleThis.setUrgent(false);
+      } else {
+        toggleThis.setUrgent(true);
+      }
+    }
+  }
+  
+  public void toggleDone(long id) {
+    Todo toggleThis = todoRepository.findById(id).orElse(null);
+    
+    if (toggleThis != null) {
+      if (toggleThis.isDone()) {
+        toggleThis.setDone(false);
+      } else {
+        toggleThis.setDone(true);
+      }
+    }
   }
 }
