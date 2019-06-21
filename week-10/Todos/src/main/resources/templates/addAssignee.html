@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>Add assignee</title>
+  <meta charset="utf-8"/>
+  <link href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+
+<body>
+
+<a class="btn btn-primary col-2" href="/assignees">Assignees</a>
+
+<form th:action="@{/assignee/add}" th:method="post" th:object="${assignee}">
+  <label>Name</label><br>
+  <input type="text" th:field="*{name}"><br>
+  <label>Email</label><br>
+  <input type="text" th:field="*{email}">
+  <div>
+    <button class="btn btn-success col-2" type="submit">Add</button>
+  </div>
+</form>
+
+<script src="/webjars/jquery/3.4.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

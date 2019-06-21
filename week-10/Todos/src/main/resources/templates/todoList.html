@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>Todos</title>
+  <meta charset="utf-8"/>
+  <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.4.0/css/bootstrap4-toggle.min.css"
+        rel="stylesheet">
+  <link href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+
+<body>
+<a class="btn btn-primary col-2" href="/assignees">Assignees</a>
+<a class="btn btn-warning col-2" href="/todo/add">Add new todo item</a>
+<form th:action="@{/todo}" th:method="post">
+  <label for="search">Search in title</label><br>
+  <input type="search" id="search" name="search" value=""><br>
+  <div>
+    <button type="submit">Search</button>
+  </div>
+</form>
+
+<h1>Todos for today:</h1>
+<div class="table">
+  <table class="table table-bordered">
+    <thead class="thead-dark">
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Assignee</th>
+      <!--      <th>Urgent</th>-->
+      <th>Urgent</th>
+      <!--      <th>Done</th>-->
+      <th>Done</th>
+      <th>Delete</th>
+    </tr>
+    </thead>
+    
+    <tbody>
+    <tr th:each="Todo : ${todos}">
+      <td style="width: min-content" th:text="${Todo.id}"></td>
+      <td th:text="${Todo.title}"></td>
+      <td th:text="${Todo.assignee.name}"></td>
+      
+      <!--      <td th:text="${Todo.urgent}"></td>-->
+      <td><input type="checkbox"
+                 data-toggle="toggle"
+                 data-on="Ugrent"
+                 data-off="Meh..."
+                 data-onstyle="warning"
+                 data-offstyle="secondary"
+                 th:checked="${Todo.urgent}"
+                 th:onchange="'window.location.href=\'todo/' + ${Todo.id} + '/toggleUrgency\''"></td>
+      
+      <!--      <td th:text="${Todo.done}"></td>-->
+      <td><input type="checkbox"
+                 data-toggle="toggle"
+                 data-on="Done"
+                 data-off="Still&nbsphave&nbspto&nbspdo"
+                 data-onstyle="success"
+                 data-offstyle="warning"
+                 th:checked="${Todo.done}"
+                 th:onchange="'window.location.href=\'todo/' + ${Todo.id} + '/toggleDone\''"></td>
+      
+      <td><input type="button"
+                 class="btn btn-danger"
+                 th:onclick="'window.location.href=\'todo/' + ${Todo.id} + '/delete\''"
+                 value="Delete"></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<script src="/webjars/jquery/3.4.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.4.0/js/bootstrap4-toggle.min.js"></script>
+</body>
+</html>

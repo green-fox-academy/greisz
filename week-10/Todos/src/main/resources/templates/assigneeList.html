@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>Assignees</title>
+  <meta charset="utf-8"/>
+  <link href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+
+<body>
+
+<a class="btn btn-primary col-2" href="/todo">Todo list</a>
+<a class="btn btn-warning col-2" href="/assignees/add">Add new assignee</a>
+
+<h1>Assignees:</h1>
+<div class="table-responsive">
+  <table class="table table-bordered">
+    <thead class="thead-dark">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+    </tr>
+    </thead>
+    
+    <tbody>
+    <tr th:each="Assignee : ${assignees}">
+      <td style="width: min-content" th:text="${Assignee.id}"></td>
+      <td th:text="${Assignee.name}"></td>
+      <td th:text="${Assignee.email}"></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<script src="/webjars/jquery/3.4.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
